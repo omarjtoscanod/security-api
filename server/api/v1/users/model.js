@@ -5,7 +5,7 @@ const PasswordValidator = require("password-validator");
 
 const valida = new PasswordValidator()
   .is()
-  .min(8, "Password debe tener mínimo 6 carateres")
+  .min(8, "Password debe tener mínimo 8 carateres")
   .is()
   .max(100, "Password debe tener máximo 100 caracteres")
   .has()
@@ -51,6 +51,9 @@ const fields = {
       validator(value) {
         return valida.validate(value);
       },
+      message(props) {
+        return `Debe contener mínimo 8 caracteres, 1 número, 1 minúscula, 1 mayúscula y 1 especial`;
+      },
     },
   },
 };
@@ -67,6 +70,7 @@ const sanitizers = [
   body("userName").escape(),
   body("firstName").escape(),
   body("lastName").escape(),
+  body("enabled").toBoolean(),
 ];
 
 const user = new Schema(Object.assign({}, fields, protected), {
