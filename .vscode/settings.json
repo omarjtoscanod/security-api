@@ -1,0 +1,14 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": true,
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.fontSize": 16,
+    "prettier.trailingComma": "es5",
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  }
